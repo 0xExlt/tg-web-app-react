@@ -10,16 +10,16 @@
 .img {
     width: 100%;
     background: lightgray;
-    height: 100px;
+    height: 200px;
     margin: 0 auto;
     background: var(--tg-theme-button-color);
-    left: 50px;
+
 }
 
 img {
     width: 100%;
     background: lightgray;
-    height: 100px;
+    height: 200px;
     margin: 0 auto;
     background: var(--tg-theme-button-color);
 }
