@@ -6,8 +6,8 @@ import {useTelegram} from "../../hooks/useTelegram";
 
 const products = [
     {id: '1', title: 'Dont Smoke', price: 2280, description: '250гр/м2, 95% хлопок/ 5% лайкра', imageUrl: './img1.png'},
-    {id: '2', title: 'Comming Soon!', price: 0, description: '250гр/м2, 95% хлопок/ 5% лайкра', imageUrl: './img2.png'},
-    {id: '3', title: 'Сomming Soon!', price: 0, description: '250гр/м2, 95% хлопок/ 5% лайкра', imageUrl: './img1.png'},
+    {id: '2', title: 'Comming Soon!', price: 0, description: 'Возможность для заказа появится позже!', imageUrl: './img2.png'},
+    {id: '3', title: 'Сomming Soon!', price: 0, description: 'Возможность для заказа появится позже!', imageUrl: './img1.png'},
     // {id: '4', title: 'Куртка 8', price: 122, description: 'Зеленого цвета, теплая'},
     // {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые'},
     // {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая'},
