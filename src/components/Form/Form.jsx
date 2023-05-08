@@ -3,6 +3,7 @@ import { useTelegram } from "../../hooks/useTelegram";
 import './Form.css';
 
 const Form = () => {
+    const [id, setId] = useState('');
     const [country, setCountry] = useState('');
     const [street, setStreet] = useState('');
     const [subject, setSubject] = useState('physical');
@@ -10,12 +11,13 @@ const Form = () => {
 
     const onSendData = useCallback(() => {
         const data = {
+            id,
             country,
             street,
             subject
         }
         tg.sendData(JSON.stringify(data));
-    }, [country, street, subject])
+    }, [id, country, street, subject])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -31,12 +33,16 @@ const Form = () => {
     }, [])
 
     useEffect(() => {
-        if(!street || !country) {
+        if(!street || !country || !id) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [country, street])
+    }, [id, country, street])
+
+    const onChangeId = (e) => {
+        setId(e.target.value)
+    }
 
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
@@ -53,6 +59,7 @@ const Form = () => {
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
+                <input className={'input'} type="text" placeholder={'id для связи'} value={id} onChange={onChangeId}/>
                 <input className={'input'} type="text" placeholder={'Город'} value={country} onChange={onChangeCountry}/>
                 <input className={'input'} type="text" placeholder={'Улица'} value={street} onChange={onChangeStreet}/>
             <select value={subject} onChange={onChangeSubject} className={'select'}>
