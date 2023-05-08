@@ -1,5 +1,5 @@
-
-import React, { useEffect, useState } from "react"
+import React from "react";
+import { useEffect, useState } from "react"
 import { useTelegram } from "../../hooks/useTelegram";
 import './Form.css';
 
@@ -9,13 +9,13 @@ const Form = () => {
     const [subject, setSubject] = useState('physical');
     const {tg} = useTelegram();
 
-    useEffect(() =>{
+    useEffect(() => {
         tg.MainButton.setParams({
             text: 'Отправить данные'
         })
     }, [])
 
-    useEffect(() =>{
+    useEffect(() => {
         if(!street || !country) {
             tg.MainButton.hide();
         } else {
