@@ -8,6 +8,7 @@
 
 
 .img {
+    background-image: url("./img1.png");
     width: 100%;
     background: lightgray;
     height: 100px;
